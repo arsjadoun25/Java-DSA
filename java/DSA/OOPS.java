@@ -62,6 +62,47 @@ class addition extends add{
     }
 }
 
+// *Abstraction*
+
+abstract class Car{
+    String color;
+    Car(){
+        color = "black";
+    }
+    void model(){
+        System.out.println("MODEL - 2023");
+    }
+    abstract void speed();
+}
+class Gt extends Car{
+    void changecolor(){
+        color = "Brown";
+    }
+    void speed(){
+        System.out.println("SPEED - 300km/hr");
+    }
+}
+
+// *Interfaces*
+interface television{
+    void content();
+}
+class aajtak implements television{
+    public void content(){
+        System.out.println("broadcasts news");
+    }
+}
+class netflix implements television{
+    public void content(){
+        System.out.println("broadcasts shows, movies, anime");
+    }
+}
+class sonic implements television{
+    public void content(){
+        System.out.println("broadcasts cartoon");
+    }
+}
+
 // *main*
 public class OOPS {
     public static void main(String[] args) {
@@ -89,9 +130,19 @@ public class OOPS {
         // System.out.println(p.breed);
         // System.out.println(p.leg);
         // System.out.println(p.color);
-        add ad = new add();
-        System.out.println(ad.sum(1, 2));
-        System.out.println(ad.sum(1, 2, 3));
-        System.out.println(ad.sum((float)1.1,(float)2.1));
+        //add ad = new add();
+        //System.out.println(ad.sum(1, 2));
+        //System.out.println(ad.sum(1, 2, 3));
+        //System.out.println(ad.sum((float)1.1,(float)2.1));
+	// Gt g = new Gt();
+        // g.model();
+        // System.out.println(g.color);
+        // g.speed();
+        aajtak at = new aajtak();
+        sonic s = new sonic();
+        netflix nf = new netflix();
+        at.content();
+        s.content();
+        nf.content();
     }    
 }
